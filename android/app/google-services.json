@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "52881769311",
+    "project_id": "bookit-99263",
+    "storage_bucket": "bookit-99263.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52881769311:android:ea2154ee1f91c9b1b3ecea",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS5BSmkFEDHBiWN7rBt_9V3H9ecXp2mjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
