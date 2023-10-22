@@ -1,6 +1,6 @@
-# flutter_application_1
+# book-it
 
-A new Flutter project.
+A new Flutter project.A hotel booking app with a user database implemented using firebasecli.
 
 ## Getting Started
 
