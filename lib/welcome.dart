@@ -19,9 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
         centerTitle: true,
       ),
-      body: Container(
-          
-      ),
+      
     );
   }
 }
