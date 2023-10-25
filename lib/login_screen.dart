@@ -4,6 +4,8 @@ import 'package:flutter_application_1/services/firebase_auth.dart';
 import 'package:flutter_application_1/splashscreen.dart';
 
 
+
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -36,18 +38,19 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: _formkey,
-          child: Container(
-            margin: EdgeInsets.all(10),
+      resizeToAvoidBottomInset: true,
+      body: Form(
+        key: _formkey,
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-      
-      
-                SizedBox(child: Image.asset("assets/644269.png")),
-      
+                
+                
+               Image.asset('assets/644269.png'),
+                
                 SizedBox(height: 20,),
                 !isLogin
                     ? TextFormField(
@@ -119,10 +122,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 SizedBox(
                     width: double.infinity,
-                    height: 50,
+                    height: 60,
                     child: ElevatedButton(
                         onPressed: () async {
                           if (_formkey.currentState!.validate()) {
@@ -132,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SplashScreen()),
+                                builder: (context) => const SplashScreen()),
                           );
                         },
                         child: isLogin ? Text('Login') : Text('Signup'))),
@@ -144,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         isLogin = !isLogin;
                       });
-      
+                
                     },
                     child: isLogin
                         ? Text("Don't have an account? Signup")

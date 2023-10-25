@@ -18,13 +18,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var duration = Duration(seconds: 3);
-    return new Timer(duration, route);
+    var duration = await Duration(seconds: 3);
+    return Timer(duration, route);
   }
 
   route() {
     Navigator.pushReplacement(context, MaterialPageRoute(
-      builder: (context) => WelcomeScreen())
+      builder: (context) => const WelcomeScreen())
       );
   }
 
@@ -43,6 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.asset('assets/644269.png'),
           Text(
             "Loading",
             style:
