@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/firebase_auth.dart';
+import 'package:flutter_application_1/splashscreen.dart';
+
+
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
     FirebaseAuthMethods(FirebaseAuth.instance).signUpWithEmail(
         email: emailcontroller.text, password: passwordcontroller.text);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,108 +38,122 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         centerTitle: true,
       ),
+      resizeToAvoidBottomInset: true,
       body: Form(
         key: _formkey,
         child: Container(
           margin: EdgeInsets.all(10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              !isLogin
-                  ? TextFormField(
-                      key: ValueKey('username'),
-                      controller: usernamecontroller,
-                      decoration: InputDecoration(
-                        hintText: 'username',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please enter full name';
-                        } else {
-                          return null;
-                        }
-                      },
-                      onSaved: (value) {
-                        setState(() {
-                          username = value!;
-                        });
-                      },
-                    )
-                  : Container(),
-              SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                key: ValueKey('email-id'),
-                controller: emailcontroller,
-                decoration: InputDecoration(
-                  hintText: 'email-id',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                
+                
+               Image.asset('assets/644269.png'),
+                
+                SizedBox(height: 20,),
+                !isLogin
+                    ? TextFormField(
+                        key: ValueKey('username'),
+                        controller: usernamecontroller,
+                        decoration: InputDecoration(
+                          hintText: 'username',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)),
+                        ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Please enter full name';
+                          } else {
+                            return null;
+                          }
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            username = value!;
+                          });
+                        },
+                      )
+                    : Container(),
+                SizedBox(
+                  height: 20,
                 ),
-                validator: (value) {
-                  if (value!.isEmpty || !value.contains('@')) {
-                    return 'Please enter @gmail.com';
-                  } else {
-                    return null;
-                  }
-                },
-                onSaved: (value) {
-                  setState(() {
-                    email = value!;
-                  });
-                },
-              ),
-              SizedBox(height: 20),
-              TextFormField(
-                key: ValueKey('password'),
-                controller: passwordcontroller,
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'password',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                ),
-                validator: (value) {
-                  if (value!.length < 6) {
-                    return 'Please enter password of min length 6';
-                  } else {
-                    return null;
-                  }
-                },
-                onSaved: (value) {
-                  setState(() {
-                    password = value!;
-                  });
-                },
-              ),
-              SizedBox(height: 20),
-              Container(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                      onPressed: () async {
-                        if (_formkey.currentState!.validate()) {
-                          _formkey.currentState!.save();
-                        }
-                        signUpUser();
-                      },
-                      child: isLogin ? Text('Login') : Text('Signup'))),
-              SizedBox(
-                height: 10,
-              ),
-              TextButton(
-                  onPressed: () {
+                TextFormField(
+                  key: ValueKey('email-id'),
+                  controller: emailcontroller,
+                  decoration: InputDecoration(
+                    hintText: 'email-id',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty || !value.contains('@')) {
+                      return 'Please enter @gmail.com';
+                    } else {
+                      return null;
+                    }
+                  },
+                  onSaved: (value) {
                     setState(() {
-                      isLogin = !isLogin;
+                      email = value!;
                     });
                   },
-                  child: isLogin
-                      ? Text("Don't have an account? Signup")
-                      : Text('Already signed up?Login'))
-            ],
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  key: ValueKey('password'),
+                  controller: passwordcontroller,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: 'password',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)),
+                  ),
+                  validator: (value) {
+                    if (value!.length < 6) {
+                      return 'Please enter password of min length 6';
+                    } else {
+                      return null;
+                    }
+                  },
+                  onSaved: (value) {
+                    setState(() {
+                      password = value!;
+                    });
+                  },
+                ),
+                SizedBox(height: 10),
+                SizedBox(
+                    width: double.infinity,
+                    height: 60,
+                    child: ElevatedButton(
+                        onPressed: () async {
+                          if (_formkey.currentState!.validate()) {
+                            _formkey.currentState!.save();
+                          }
+                          signUpUser();
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SplashScreen()),
+                          );
+                        },
+                        child: isLogin ? Text('Login') : Text('Signup'))),
+                SizedBox(
+                  height: 10,
+                ),
+                TextButton(
+                    onPressed: () {
+                      setState(() {
+                        isLogin = !isLogin;
+                      });
+                
+                    },
+                    child: isLogin
+                        ? Text("Don't have an account? Signup")
+                        : Text('Already signed up?Login'))
+              ],
+            ),
           ),
         ),
       ),
