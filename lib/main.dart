@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/login_screen.dart';
+
+import 'package:flutter_application_1/splashscreen.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -19,11 +20,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter demo",
       theme: ThemeData(
-          
-          colorScheme:
-              ColorScheme.fromSwatch(primarySwatch: Colors.teal)),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+          scaffoldBackgroundColor: Color.fromARGB(255, 231, 231, 231)
+      ),
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/firebase_auth.dart';
-import 'package:flutter_application_1/splashscreen.dart';
+import 'package:flutter_application_1/welcome.dart';
+
 
 
 
@@ -127,15 +128,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 60,
                     child: ElevatedButton(
+                      
                         onPressed: () async {
                           if (_formkey.currentState!.validate()) {
                             _formkey.currentState!.save();
                           }
                           signUpUser();
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const SplashScreen()),
+                                builder: (context) => const WelcomeScreen()),
                           );
                         },
                         child: isLogin ? Text('Login') : Text('Signup'))),
