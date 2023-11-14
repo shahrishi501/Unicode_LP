@@ -46,7 +46,7 @@ class NearbyPlaces extends StatelessWidget {
                             children: [
                                Text(
                                 nearbyPlaces[index].name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -70,13 +70,13 @@ class NearbyPlaces extends StatelessWidget {
                                   ),
                                   const Spacer(),
                                   RichText(
-                                    text: TextSpan(
+                                    text: const TextSpan(
                                         style: TextStyle(
                                           fontSize: 20,
                                           color: Colors.teal,
                                         ),
                                         text: "\$22",
-                                        children: const [
+                                        children: [
                                           TextSpan(
                                               style: TextStyle(
                                                 fontSize: 12,
