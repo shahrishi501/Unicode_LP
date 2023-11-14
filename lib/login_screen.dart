@@ -1,11 +1,8 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/firebase_auth.dart';
 import 'package:flutter_application_1/welcome.dart';
-
-
-
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,6 +12,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+ 
+
   final _formkey = GlobalKey<FormState>();
   bool isLogin = false;
   String email = '';
@@ -33,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Book-It"),
-        titleTextStyle: TextStyle(
+        titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 30,
         ),
@@ -43,19 +42,18 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Form(
         key: _formkey,
         child: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
-                
-               Image.asset('assets/644269.png'),
-                
-                SizedBox(height: 20,),
+                Image.asset('assets/644269.png'),
+                const SizedBox(
+                  height: 20,
+                ),
                 !isLogin
                     ? TextFormField(
-                        key: ValueKey('username'),
+                        key: const ValueKey('username'),
                         controller: usernamecontroller,
                         decoration: InputDecoration(
                           hintText: 'username',
@@ -76,11 +74,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       )
                     : Container(),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
-                  key: ValueKey('email-id'),
+                  key: const ValueKey('email-id'),
                   controller: emailcontroller,
                   decoration: InputDecoration(
                     hintText: 'email-id',
@@ -100,9 +98,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextFormField(
-                  key: ValueKey('password'),
+                  key: const ValueKey('password'),
                   controller: passwordcontroller,
                   obscureText: true,
                   decoration: InputDecoration(
@@ -123,12 +121,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                     width: double.infinity,
                     height: 60,
                     child: ElevatedButton(
-                      
                         onPressed: () async {
                           if (_formkey.currentState!.validate()) {
                             _formkey.currentState!.save();
@@ -140,8 +137,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 builder: (context) => const WelcomeScreen()),
                           );
                         },
-                        child: isLogin ? Text('Login') : Text('Signup'))),
-                SizedBox(
+                        child: isLogin
+                            ? const Text('Login')
+                            : const Text('Signup'))),
+                const SizedBox(
                   height: 10,
                 ),
                 TextButton(
@@ -149,11 +148,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {
                         isLogin = !isLogin;
                       });
-                
                     },
                     child: isLogin
-                        ? Text("Don't have an account? Signup")
-                        : Text('Already signed up?Login'))
+                        ? const Text("Don't have an account? Signup")
+                        : const Text('Already signed up?Login'))
               ],
             ),
           ),
@@ -162,3 +160,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+  
+

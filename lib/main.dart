@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/splashscreen.dart';
-import 'firebase_options.dart';
+import 'services/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: "Flutter demo",
       theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+          // ignore: prefer_const_constructors
           scaffoldBackgroundColor: Color.fromARGB(255, 231, 231, 231)
       ),
       debugShowCheckedModeBanner: false,

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/popular_model.dart';
 import 'package:flutter_application_1/widgets/details.dart';
 
@@ -12,6 +12,7 @@ class PopularDestinations extends StatelessWidget {
       child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
+          
           itemBuilder: (context, index) {
             return SizedBox(
               width: 220,
@@ -48,7 +49,7 @@ class PopularDestinations extends StatelessWidget {
                           children: [
                              Text(
                            popularPlaces[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -78,7 +79,7 @@ class PopularDestinations extends StatelessWidget {
                             const SizedBox(width: 5),
                            Text(
                               popularPlaces[index].location,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 12,
                               ),
                             )
@@ -94,7 +95,7 @@ class PopularDestinations extends StatelessWidget {
           separatorBuilder: (context, index) => const Padding(
                 padding: EdgeInsets.only(right: 10),
               ),
-          itemCount: popularPlaces.length),
+          itemCount: hotels!.length),
     );
   }
-}
+}*/

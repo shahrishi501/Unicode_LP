@@ -12,30 +12,30 @@ class DetailsPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                  padding: EdgeInsets.all(20),
+              const Padding(
+                  padding: EdgeInsets.all(10),
                   child: Text(
                     "\$22/Per Night",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   )),
               Padding(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: SizedBox(
                   height: 50,
                   width: 200,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Book",
-                      style: TextStyle(
-                        fontSize: 22,
-                      ),
-                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.teal,
                       elevation: 3,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
+                    ),
+                    child: const Text(
+                      "Book",
+                      style: TextStyle(
+                        fontSize: 22,
+                      ),
                     ),
                   ),
                 ),
@@ -47,13 +47,13 @@ class DetailsPage extends StatelessWidget {
           
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
               child: Container(
                 height: 300,
                 decoration: BoxDecoration(
-                    boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 25)],
+                    boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 25)],
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage("assets/st annes.jpg"),
                         fit: BoxFit.cover)),
                 child: Row(
@@ -61,7 +61,7 @@ class DetailsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Container(
                         height: 40,
                         width: 40,
@@ -70,7 +70,7 @@ class DetailsPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.grey),
                         child: InkWell(
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back_ios_new,
                             color: Colors.white,
                             size: 20,
@@ -87,7 +87,7 @@ class DetailsPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Container(
                         height: 40,
                         width: 40,
@@ -98,7 +98,7 @@ class DetailsPage extends StatelessWidget {
                         child: InkWell(
                           splashColor: Colors.pink,
                           focusColor: Colors.pink,
-                          child: Icon(
+                          child: const Icon(
                             Icons.favorite,
                             color: Colors.white,
                             size: 20,
@@ -116,11 +116,11 @@ class DetailsPage extends StatelessWidget {
             ),
             Row(
               children: [
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Text(
                         "St Anne Hotel",
                         style: TextStyle(
@@ -143,7 +143,7 @@ class DetailsPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
                 Icon(
@@ -168,11 +168,11 @@ class DetailsPage extends StatelessWidget {
                 ),
               ],
             ),
-           Column(
+           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                Padding(
-                 padding: const EdgeInsets.only(left: 20),
+                 padding: EdgeInsets.only(left: 20),
                  child: Text("Description",style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -182,7 +182,7 @@ class DetailsPage extends StatelessWidget {
                ),
 
                Padding(
-                 padding: const EdgeInsets.only(left: 20),
+                 padding: EdgeInsets.only(left: 20),
                  child: Text("St Anne Hotel offers ultimate comfort and luxury. This 4-storied hotel is a beautiful combination of traditional grandeur and modern facilities. The 255 exclusive guest rooms are furnished with a range of modern amenities such as television and internet access. International direct-dial phone and safe are also available in any of these rooms. Wake-up call facility is also available in these rooms. ",
                  style: TextStyle(
                   fontSize: 15,
