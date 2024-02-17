@@ -1,4 +1,4 @@
-class PopularPlaceModel {
+/*class PopularPlaceModel {
   final String image;
   final double rating;
   final String name;
@@ -42,4 +42,4 @@ List<PopularPlaceModel> popularPlaces = [
     name: "York",
     location: "New York"
   ),
-];
+];*/

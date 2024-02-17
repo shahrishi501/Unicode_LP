@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/splashscreen.dart';
@@ -6,6 +7,19 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  AwesomeNotifications().initialize(
+    null, 
+    [
+      NotificationChannel(
+        channelKey: 'key1', 
+        channelName: 'Book-it', 
+        channelDescription: 'Notification',
+        defaultColor: Color(0xFF4E888F),
+        playSound: true,
+        enableVibration: true
+        )
+    ]
+    );
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -20,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter demo",
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal),
+          colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 78, 136, 143)),
           // ignore: prefer_const_constructors
           scaffoldBackgroundColor: Color.fromARGB(255, 231, 231, 231)
       ),
