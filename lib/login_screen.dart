@@ -31,6 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+       
         title: const Text("Book-It"),
         titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
@@ -126,6 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 60,
                     child: ElevatedButton(
+                        
                         onPressed: () async {
                           if (_formkey.currentState!.validate()) {
                             _formkey.currentState!.save();
@@ -144,6 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 10,
                 ),
                 TextButton(
+                  
                     onPressed: () {
                       setState(() {
                         isLogin = !isLogin;
